@@ -1,0 +1,175 @@
+.skills {
+  background-color: var(--surface-light);
+  position: relative;
+}
+
+.app.dark .skills {
+  background-color: var(--surface-dark);
+}
+
+.section-description {
+  max-width: 800px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+  color: var(--text-secondary-light);
+  font-size: var(--fs-md);
+  line-height: 1.7;
+}
+
+.app.dark .section-description {
+  color: var(--text-secondary-dark);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.skills-category {
+  background-color: var(--background-light);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.app.dark .skills-category {
+  background-color: var(--background-dark);
+}
+
+.skills-category:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-title {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  position: relative;
+  display: inline-block;
+}
+
+.app.dark .category-title {
+  color: var(--text-dark);
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 2.5rem;
+  height: 3px;
+  background-color: var(--primary-light);
+  transition: width var(--transition-medium);
+}
+
+.app.dark .category-title::after {
+  background-color: var(--primary-dark);
+}
+
+.skills-category:hover .category-title::after {
+  width: 100%;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-weight: 500;
+  font-size: var(--fs-md);
+}
+
+.skill-percentage {
+  font-weight: 600;
+  color: var(--primary-light);
+  font-size: var(--fs-sm);
+}
+
+.app.dark .skill-percentage {
+  color: var(--primary-dark);
+}
+
+.progress {
+  height: 8px;
+  background-color: var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.app.dark .progress {
+  background-color: var(--border-dark);
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0; /* Will be set via JS */
+  background: linear-gradient(90deg, var(--primary-light), var(--accent-light));
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+.app.dark .progress-bar {
+  background: linear-gradient(90deg, var(--primary-dark), var(--accent-dark));
+}
+
+/* Animation for elements */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Adding staggered animations */
+.skills-category:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.skills-category:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.skills-category:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.skills-category:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .skills-category {
+    padding: 1.5rem;
+  }
+} 
