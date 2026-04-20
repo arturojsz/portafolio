@@ -66,6 +66,26 @@ const Projects = () => {
       demoUrl: '#',
       codeUrl: '#'
     },
+    {
+      id: 7,
+      title: 'Derwin Eusebio',
+      description: 'Corporate website focused on presenting services, brand identity, and contact channels with a clear business-oriented layout.',
+      category: 'web',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/portfolio-placeholder.jpg',
+      demoUrl: 'https://derwineusebio.com/',
+      codeUrl: null
+    },
+    {
+      id: 8,
+      title: 'RD TransVIP',
+      description: 'Transportation service website designed to showcase premium transfers, booking information, and trust signals for potential clients.',
+      category: 'web',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/portfolio-placeholder.jpg',
+      demoUrl: 'https://rdtransvip.com/',
+      codeUrl: null
+    },
   ];
   
   // Filter projects based on active filter
